@@ -37,3 +37,31 @@ footer{
     bottom: 0;
     width: 100%;
 }
+
+
+
+/* post page */
+/* styles.css */
+.form-group label {
+    font-weight: bold;
+  }
+  .form-group input[type=text],
+  .form-group textarea {
+    border-radius: 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  .form-group input[type=text]:focus,
+  .form-group textarea:focus {
+    border-color: blue;
+    box-shadow: none;
+  }
+  .btn-primary {
+    background-color: blue;
+    border: none;
+    border-radius: 0;
+  }
+  .btn-primary:hover {
+    background-color: darkblue;
+  }
+  

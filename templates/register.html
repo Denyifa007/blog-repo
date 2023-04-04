@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<div>
+    <div class="container p-3">
+        <h1 style="text-align: center; text-decoration: underline;">Register User</h1>
+    <div class="row">
+        <div class="col-12">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInput" class="form-label">UserName</label>
+                    {{form.username}}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInput" class="form-label">Email</label>
+                    {{form.email}}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    {{form.password1}}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    {{form.password2}}
+                </div>
+
+                <button type="submit" class="btn btn-outline-dark">Create New User</button>
+                <div class="sign">
+                    <p>Alreay have an account?<span><a href="{%  url 'login' %}"> Login</a></span></p>
+                </div>
+                <style>
+                    a{
+                        cursor: pointer;
+                        color: blueviolet;
+                        font-size: 1.5rem;
+                        text-decoration: none;
+                    }
+                </style>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    let form_fields = document.getElementsByTagName('input');
+    form_fields[1].placeholder = 'Username';
+
+    for (let field in form_fields) {
+        form_fields[field].className = 'form-control'
+    }
+</script>
+</div>
+{% endblock body %}

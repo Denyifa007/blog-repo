@@ -1,0 +1,19 @@
+<!-- post_delete.html -->
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 w-50 m-auto text-center">
+            <h2>Delete post</h2>
+            <p>Are you sure you want to delete "{{ post.title }}"?</p>
+            <form method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">Delete</button>
+              <a href="{% url 'post_detail' post.id %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+ 
+{% endblock %}
